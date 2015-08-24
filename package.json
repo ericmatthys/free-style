@@ -13,8 +13,8 @@
     "lint": "# TODO",
     "build": "npm run build-ts",
     "build-ts": "tsc",
-    "test-spec": "mocha \"dist/**/*.spec.js\" -R spec --bail",
-    "test-cov": "istanbul cover -x \"dist/**/*.spec.js\" node_modules/mocha/bin/_mocha -- \"dist/**/*.spec.js\" -R spec --bail",
+    "test-spec": "blue-tape dist/**/*.spec.js",
+    "test-cov": "istanbul cover --print none -x dist/**/*.spec.js blue-tape -- dist/**/*.spec.js | faucet",
     "test": "npm run build && npm run lint && npm run test-cov",
     "prepublish": "npm run build"
   },
@@ -43,11 +43,13 @@
   },
   "homepage": "https://github.com/blakeembrey/free-style",
   "devDependencies": {
-    "chai": "^2.1.0",
+    "blue-tape": "^0.1.10",
     "istanbul": "^0.3.6",
-    "mocha": "^2.1.0",
     "pre-commit": "^1.0.6",
-    "standard": "^2.6.3",
-    "typescript": "^1.5.0-beta"
+    "typescript": "^1.5.3"
+  },
+  "dependencies": {
+    "object-values": "^1.0.0",
+    "sort-keys": "^1.1.1"
   }
 }

@@ -11,6 +11,8 @@
   "files": [
     "src/free-style.ts",
     "src/free-style.spec.ts",
-    "typings/tsd.d.ts"
+    "typings/tsd.d.ts",
+    "src/typings/object-values.d.ts",
+    "src/typings/blue-tape.d.ts"
   ]
 }
